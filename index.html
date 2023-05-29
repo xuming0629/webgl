@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+            /* width: 400px;
+            height: 400px; 
+            不能使用 CSS 设置*/
+        }
+    </style>
+</head>
+
+<body>
+    <p> hello world</p>
+    <canvas id="canvas"></canvas>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        let canvas = document.getElementById("canvas")
+        console.log(canvas)
+        let ctx = canvas.getContext('2d')
+        //let ctx = canvas.getContext('webgl')
+
+        // cavnvas 的画布大小
+        canvas.width = 400
+        canvas.height = 400
+
+        let x = 0
+        let y = 0
+        let w = 20
+        let h = 20
+        function draw() {
+            ctx.fillRect(x, y, w, h)
+
+
+        }
+
+        // for (let i=0; i<10; i++)
+        // {
+        //     draw()
+        //     x += 20
+        //     y += 20
+        // }
+
+        setInterval(() => {
+            // 清空
+            ctx.clearRect(0, 0, 400, 400)
+            draw()
+            x += 20
+            y += 20
+        }, 500) // 每个 500s 重新绘制
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
